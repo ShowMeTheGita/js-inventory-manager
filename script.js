@@ -12,38 +12,57 @@ const addData = (ev) =>{
 
     let name = document.getElementById('name').value;
     let quantity = document.getElementById('quantity').value;
+    let quantityInteger = parseInt(quantity, 10);
 
-    let newTr = document.createElement("tr");
-    newTr.id = test;
+    let error = false;
 
-    let nameTd = document.createElement("td");
-    let quantityTd = document.createElement("td");
+    switch (true) {
+        
+        case isNaN(quantityInteger) == true : alert("Quantity must be a valid number.");
+        error = true;
+        break;
 
-    let deleteTd = document.createElement("td");
-    deleteTd.style.textAlign = "center"
-    let imgForDeleteTd = document.createElement("img");
-    imgForDeleteTd.src = "https://upload.wikimedia.org/wikipedia/commons/4/4d/Grey_delete_icon_%28Wikiproject_icons%29.svg";
-    imgForDeleteTd.style.width = "25px";
-    imgForDeleteTd.style.height ="25px";
-    imgForDeleteTd.alt = "delete-icon";
-    imgForDeleteTd.style.cursor = "pointer";
+        case quantityInteger < 0 : alert("Quantity must be bigger than 0.");
+        error = true;
+        break;
 
-    imgForDeleteTd.addEventListener('click', function () {
-        let toDelete = document.getElementById(newTr.id);
-        toDelete.parentNode.removeChild(toDelete);
-    });
+    }
 
-    deleteTd.appendChild(imgForDeleteTd);
+    if (error === false) {
 
-    nameTd.innerHTML = name;
-    quantityTd.innerHTML = quantity;
+        let newTr = document.createElement("tr");
+        newTr.id = test;
 
-    newTr.appendChild(nameTd);
-    newTr.appendChild(quantityTd);
-    newTr.appendChild(deleteTd);
-    document.getElementById('products').appendChild(newTr);
+        let nameTd = document.createElement("td");
+        let quantityTd = document.createElement("td");
 
-    test++;
+        let deleteTd = document.createElement("td");
+        deleteTd.style.textAlign = "center"
+        let imgForDeleteTd = document.createElement("img");
+        imgForDeleteTd.src = "https://upload.wikimedia.org/wikipedia/commons/4/4d/Grey_delete_icon_%28Wikiproject_icons%29.svg";
+        imgForDeleteTd.style.width = "25px";
+        imgForDeleteTd.style.height ="25px";
+        imgForDeleteTd.alt = "delete-icon";
+        imgForDeleteTd.style.cursor = "pointer";
+
+        imgForDeleteTd.addEventListener('click', function () {
+            let toDelete = document.getElementById(newTr.id);
+            toDelete.parentNode.removeChild(toDelete);
+        });
+
+        deleteTd.appendChild(imgForDeleteTd);
+
+        nameTd.innerHTML = name;
+        quantityTd.innerHTML = quantity;
+
+        newTr.appendChild(nameTd);
+        newTr.appendChild(quantityTd);
+        newTr.appendChild(deleteTd);
+        document.getElementById('products').appendChild(newTr);
+
+        test++;
+
+    }
 
 }
 
