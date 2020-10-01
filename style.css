@@ -1,0 +1,122 @@
+
+/* === GENERAL STYLING RULES === */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+/* === HEADER === */
+
+header {
+    display: flex;
+    height: 5em;
+    justify-content: center;
+}
+
+.page-title {
+    border-bottom-style: solid;
+    border-color: brown;
+    display: flex;
+}
+
+.page-title h1 {
+    padding-left: 1em;
+}
+
+
+/* === MAIN CONTENT === */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#products {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-collapse: collapse;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2px;
+}
+
+
+#products td, #products th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#products tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#products tr:hover {
+    background-color: #ddd;
+}
+
+#products th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    background-color: darkred;
+    color: white;
+}
+
+#productform {
+    margin: 0 auto;
+    padding: 1em;
+    width: 400px;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    float: top;
+}
+
+#productform ul {
+    list-style: none;
+    padding: 0%;
+    margin: 0;
+}
+
+#productform li + li {
+    margin-top: 1em;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+}
+
+#productform button {
+    text-align: left;
+    margin-left: 90px;
+}
+
+#searchInput {
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 25%;
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+    margin-top: 25px;
+}
+
+.searchbar {
+    position: relative;
+    text-align: center;
+}
+
+.testingStuff{
+    display: inline-block;
+}
