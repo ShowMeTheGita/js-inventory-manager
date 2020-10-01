@@ -1,8 +1,10 @@
 $(document).ready(function () {
 
-    document.getElementById('button-add').addEventListener('click', addData)
+    document.getElementById('button-add').addEventListener('click', addData);
 
 })
+
+var test = 0;
 
 const addData = (ev) =>{
     
@@ -11,8 +13,9 @@ const addData = (ev) =>{
     let name = document.getElementById('name').value;
     let quantity = document.getElementById('quantity').value;
 
-
     let newTr = document.createElement("tr");
+    newTr.id = test;
+
     let nameTd = document.createElement("td");
     let quantityTd = document.createElement("td");
 
@@ -24,6 +27,12 @@ const addData = (ev) =>{
     imgForDeleteTd.style.height ="25px";
     imgForDeleteTd.alt = "delete-icon";
     imgForDeleteTd.style.cursor = "pointer";
+
+    imgForDeleteTd.addEventListener('click', function () {
+        let toDelete = document.getElementById(newTr.id);
+        toDelete.parentNode.removeChild(toDelete);
+    });
+
     deleteTd.appendChild(imgForDeleteTd);
 
     nameTd.innerHTML = name;
@@ -34,8 +43,9 @@ const addData = (ev) =>{
     newTr.appendChild(deleteTd);
     document.getElementById('products').appendChild(newTr);
 
-}
+    test++;
 
+}
 
 
 function filterTable() {
