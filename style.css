@@ -21,8 +21,9 @@ header {
 
 .page-title {
     border-bottom-style: solid;
-    border-color: brown;
+    border-color: rgba(236, 236, 6, 0.952);
     display: flex;
+    justify-content: center;
 }
 
 .page-title h1 {
@@ -66,8 +67,8 @@ header {
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: left;
-    background-color: darkred;
-    color: white;
+    background-color: rgba(236, 236, 6, 0.952);
+    color: black;
 }
 
 #productform {
