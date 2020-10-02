@@ -32,17 +32,13 @@ const addData = (ev) =>{
     if (error === false) {
 
         let productsTable = document.getElementById("products");
-        let targetTDs = productsTable.querySelectorAll('tr > td:first-child');
+        let targetTDs = productsTable.querySelectorAll("td");
 
         for (var i = 0; i < targetTDs.length; i++) {
 
             var specificTd = targetTDs[i];
             var tdContent = specificTd.innerHTML;
-            
-            if (tdContent == name) {
-                
-            }
-
+            console.log(tdContent);
 
         }
 
