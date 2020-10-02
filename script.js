@@ -4,7 +4,7 @@ $(document).ready(function () {
 
 })
 
-var test = 0;
+var counter = 0;
 
 const addData = (ev) =>{
     
@@ -28,10 +28,27 @@ const addData = (ev) =>{
 
     }
 
+
     if (error === false) {
 
+        let productsTable = document.getElementById("products");
+        let targetTDs = productsTable.querySelectorAll('tr > td:first-child');
+
+        for (var i = 0; i < targetTDs.length; i++) {
+
+            var specificTd = targetTDs[i];
+            var tdContent = specificTd.innerHTML;
+            
+            if (tdContent == name) {
+                
+            }
+
+
+        }
+
+
         let newTr = document.createElement("tr");
-        newTr.id = test;
+        newTr.id = counter;
 
         let nameTd = document.createElement("td");
         let quantityTd = document.createElement("td");
@@ -60,7 +77,7 @@ const addData = (ev) =>{
         newTr.appendChild(deleteTd);
         document.getElementById('products').appendChild(newTr);
 
-        test++;
+        counter++;
 
     }
 
