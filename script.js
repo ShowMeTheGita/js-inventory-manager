@@ -4,21 +4,25 @@ $(document).ready(function () {
 
 })
 
+//outside variable declared to increment tr ids on each click
 var counter = 0;
 
 const addData = (ev) =>{
     
     ev.preventDefault();
 
+    //get the name and quantity inputs, parse quantity to int
     let name = document.getElementById('name').value;
     let quantity = document.getElementById('quantity').value;
     let quantityInteger = parseInt(quantity, 10);
 
+    //turns true if errors occur inside the switch statement
     let error = false;
 
+    //checks correctness of input syntax
     switch (true) {
         
-        case isNaN(quantityInteger) == true : alert("Quantity must be a valid number.");
+        case isNaN(quantityInteger) === true : alert("Quantity must be a valid number.");
         error = true;
         break;
 
@@ -29,18 +33,21 @@ const addData = (ev) =>{
     }
 
 
-    if (error === false) {
+    let productsTable = document.getElementById("products");
+    let targetTds = productsTable.querySelectorAll("td");
 
-        let productsTable = document.getElementById("products");
-        let targetTDs = productsTable.querySelectorAll("td");
+    //check if the input data already exists
+    for (var i = 0; i < targetTds.length; i++) {
 
-        for (var i = 0; i < targetTDs.length; i++) {
+        var tdData = targetTds[i].innerHTML;
 
-            var specificTd = targetTDs[i];
-            var tdContent = specificTd.innerHTML;
-            console.log(tdContent);
-
+        if (error === false && tdData === name) {
+            console.log("entered");
+            console.log(tdData);
         }
+
+    }
+
 
 
         let newTr = document.createElement("tr");
@@ -77,7 +84,6 @@ const addData = (ev) =>{
 
     }
 
-}
 
 
 function filterTable() {
