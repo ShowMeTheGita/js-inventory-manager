@@ -24,11 +24,11 @@ const addData = (ev) =>{
         
         case isNaN(quantityInteger) === true : alert("Quantity must be a valid number.");
         error = true;
-        break;
+        return;
 
         case quantityInteger < 0 : alert("Quantity must be bigger than 0.");
         error = true;
-        break;
+        return;
 
     }
 
